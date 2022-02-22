@@ -33,13 +33,22 @@ class MainActivity : AppCompatActivity() {
             result.setText((no1.text.toString().toInt()/no2.text.toString().toInt()).toString())
         }
         tableBtn.setOnClickListener {
-            val num = no1.text.toString().toInt();
-            var table = ""
-            for (i in 1..10) {
-                table = table + "\n" + num + " x " + i + " = " + (num*i)
-            }
-            result.setText(table)
 
+            var table = ""
+            if(no1.text.toString().isNotEmpty()) {
+                val num1 = no1.text.toString().toInt();
+                for (i in 1..10) {
+                    table = table + "\n" + num1 + " x " + i + " = " + (num1 * i)
+                }
+                result.setText(table)
+            }
+            if(no2.text.toString().isNotEmpty()) {
+                val num2 = no2.text.toString().toInt();
+                for (i in 1..10) {
+                    table = table + "\n" + num2 + " x " + i + " = " + (num2 * i)
+                }
+                result.setText(table)
+            }
         }
 
     }
